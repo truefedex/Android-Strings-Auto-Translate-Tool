@@ -1,0 +1,46 @@
+{
+    // Используйте IntelliSense, чтобы узнать о возможных атрибутах.
+    // Наведите указатель мыши, чтобы просмотреть описания существующих атрибутов.
+    // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'auto_trans'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=auto_trans",
+                    "--package=auto_trans"
+                ],
+                "filter": {
+                    "name": "auto_trans",
+                    "kind": "bin"
+                }
+            },
+            "env": { "RUST_BACKTRACE" : "1" },
+            "args": ["C:\\projects\\phlox\\tv-bro\\app\\src\\main\\res"],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'auto_trans'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=auto_trans",
+                    "--package=auto_trans"
+                ],
+                "filter": {
+                    "name": "auto_trans",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
