@@ -12,6 +12,7 @@ Made by learning Rust language (so many possible errors and situations are unhan
 **Where:**
 
 [path] - path to "res" folder
+
 [lang] - language code to translate from, means values/strings.xml file should contain strings in this language
 
 The application looks through the folders inside [res] and finds the file values/strings.xml, which is considered the main file with strings in [lang] language. Then it looks through the folders inside [res] which match the pattern values-xx (where xx is the language code from the list of supported GT languages) with strings.xml inside.
