@@ -34,6 +34,7 @@ impl Translation {
         translated_xml_element.attributes.insert(ATTRIBUTE_NAME.to_string(), token_name.to_string());
         translated_xml_element.children.push(XMLNode::Text(text));
         self.xml.children.push(XMLNode::Element(translated_xml_element));
+        self.changed = true;
     }
 
     pub fn append_string_array(&mut self, token_name: &str, array: Vec<String>) {
@@ -45,6 +46,7 @@ impl Translation {
             translated_xml_element.children.push(XMLNode::Element(item_xml_element));
         }
         self.xml.children.push(XMLNode::Element(translated_xml_element));
+        self.changed = true;
     }
 
     pub fn save(&self) {

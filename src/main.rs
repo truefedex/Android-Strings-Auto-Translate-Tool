@@ -95,7 +95,9 @@ fn main() {
             }
         }
         for translation in &translations {
-            translation.save();
+            if translation.changed {
+                translation.save();
+            }
         }
     } else {
         println!("Main translation file {} not found", TRANSLATIONS_FILE_NAME);
