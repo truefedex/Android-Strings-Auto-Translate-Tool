@@ -75,8 +75,8 @@ impl Translation {
         let body = reqwest::blocking::get(translate_url)?.text()?;
         let before_trans = "class=\"result-container\">";
         let after_trans="</div>";
-        let mut translated = &body[(body.find(before_trans).ok_or("Can not parse google translate ansver")? + before_trans.len())..];
-        translated = &translated[..translated.find(after_trans).ok_or("Can not parse google translate ansver")?];
+        let mut translated = &body[(body.find(before_trans).ok_or("Can not parse google translate answer")? + before_trans.len())..];
+        translated = &translated[..translated.find(after_trans).ok_or("Can not parse google translate answer")?];
         Ok(String::from(translated))
     }
 }
